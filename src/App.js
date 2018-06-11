@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import Paper from 'material-ui/Paper';
 import AppBar from 'material-ui/AppBar';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import LocationList from './components/LocationList';
 import ForecastExtended from './components/ForecastExtended';
+import { setCity } from './actions';
+import { store } from './store';
 
 import './App.css';
 
@@ -13,7 +16,8 @@ const cities = [
     'Madrid,es',
     'Bogota,col',
     'Ciudad de México,mx'
-];
+]; 
+
 
 class App extends Component {
 
@@ -26,6 +30,9 @@ class App extends Component {
     handleSelectedLocation = city => {
         this.setState( {city});
         console.log(`handleWeatherLocationClick ${city}`);
+        
+
+        this.props.setCity(city);
     };
     
     render(){
@@ -82,4 +89,11 @@ class App extends Component {
     }
 }
 
-export default App;
+const mapDispatchToPropsActions = dispatch => ({
+    setCity: value => dispatch(setCity(value))
+});
+ 
+const AppConnected = connect(null, mapDispatchToPropsActions)(App);
+
+
+export default AppConnected;
