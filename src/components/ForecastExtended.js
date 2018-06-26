@@ -13,7 +13,7 @@ import './styles.css';
 //     wind: 'normal'
 // };
 
-const url = 'http://api.openweathermap.org/data/2.5/forecast';
+const url = 'https://api.openweathermap.org/data/2.5/forecast';
 const api_key = "b830ba2299bbb2c76d9e238e8830e53f";
 
 class ForecastExtended extends Component {

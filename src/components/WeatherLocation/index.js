@@ -6,7 +6,7 @@ import WeatherData from './WeatherData/index';
 import transformWeather from '../../services/transformWeather';
 import './styles.css';
 
-const url = 'http://api.openweathermap.org/data/2.5/weather';
+const url = 'https://api.openweathermap.org/data/2.5/weather';
 const api_key = "b830ba2299bbb2c76d9e238e8830e53f";
 
 // const Weathers = {
