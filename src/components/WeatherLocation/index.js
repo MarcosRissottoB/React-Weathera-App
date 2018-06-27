@@ -9,15 +9,6 @@ import './styles.css';
 const url = 'https://api.openweathermap.org/data/2.5/weather';
 const api_key = "b830ba2299bbb2c76d9e238e8830e53f";
 
-// const Weathers = {
-//  cloud: "cloud",
-//  cloudy: "cloudy",
-//  sun: "day-sunny",
-//  rain: "rain",
-//  snow: "snow",
-//  windy: "windy"
-// };
-
 class WeatherLocation extends Component {
 
   constructor({ city }) {
@@ -27,19 +18,6 @@ class WeatherLocation extends Component {
       data: null
     };
   }
-
-  // handleUpdateClick = () => {
-
-  //   fetch(api_weather)
-  //     .then( data => {
-  //       return data.json();
-  //     })
-  //     .then(weather_data => {
-  //       const data = transformWeather(weather_data);
-  //       this.setState({ data });
-  //     });
-
-  // }
 
   componentWillMount() {
     const { city } = this.state;
@@ -52,7 +30,6 @@ class WeatherLocation extends Component {
         const data = transformWeather(weather_data);
         this.setState({ data });
       });
-    //this.handleUpdateClick();
   };
 
   render = () => {
@@ -63,7 +40,6 @@ class WeatherLocation extends Component {
         <Location city={city} />
         {data ? <WeatherData data={data}/> :
          <CircularProgress size={60} thickness={7} />}
-        {/* <button onClick={this.handleUpdateClick} >Actualizar</button> */}
       </div>);
   };
 }

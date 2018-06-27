@@ -6,7 +6,6 @@ import { connect } from 'react-redux';
 
 class ForecastExtendedContainar extends Component {
 
-
     render() {
         return (
             this.props.city && 

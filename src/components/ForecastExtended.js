@@ -4,15 +4,6 @@ import ForecastItem from './ForecastItem';
 import transformForecast from './../services/transformForecast';
 import './styles.css';
 
-//const days = ['Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes'];
-
-// const data = {
-//     temperature: 10,
-//     humidity: 10,
-//     weatherState: 'normal',
-//     wind: 'normal'
-// };
-
 const url = 'https://api.openweathermap.org/data/2.5/forecast';
 const api_key = "b830ba2299bbb2c76d9e238e8830e53f";
 
@@ -41,9 +32,7 @@ class ForecastExtended extends Component {
             data => (data.json())
         ).then(
             weather_data => {
-                console.log("weather_data", weather_data);
                 const forecastData = transformForecast(weather_data);
-                console.log("forecastData", forecastData);
                 this.setState({ forecastData })
             }
         );

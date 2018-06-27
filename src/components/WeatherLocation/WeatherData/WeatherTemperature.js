@@ -14,17 +14,6 @@ import {
 
 import './styles.css';
 
-// const Weathers = {
-//  cloud: "cloud",
-//  cloudy: "cloudy",
-//  sun: "day-sunny",
-//  rain: "rain",
-//  snow: "snow",
-//  windy: "windy",
-//  thunder: "thunder",
-//  drizzle: "drizzle"
-// };
-
 
 const stateToIconName = weatherState => {
   switch(weatherState) {

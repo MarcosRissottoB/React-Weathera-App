@@ -1,9 +1,7 @@
 import convert from 'convert-units';
 import {
-    // CLOUD,
     CLOUDY,
     SUN,
-    // WINDY,
     SNOW,
     RAIN,
     THUNDER,
